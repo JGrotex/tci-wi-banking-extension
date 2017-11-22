@@ -12,3 +12,6 @@ Input
 
 Output
 - result (String) "valid" / "invalid"
+
+<hr>
+<sub><b>Note:</b> more TCI Extensions can be found here: https://tibcosoftware.github.io/tci-awesome/ </sub>
