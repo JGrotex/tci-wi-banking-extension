@@ -1,0 +1,30 @@
+{
+    "name": "IBANvalidation",
+    "version": "1.2.0",
+    "title": "IBAN validation",
+    "author": "TIBCO Software Inc. [JGrotex]",
+    "type": "flogo:activity",
+     
+    "display": {
+       "category": "banking",
+       "visible": true,
+       "smallIcon": "iban.png",
+       "description": "Activity returns if a IBAN string is valid or invalid"
+    },
+ 
+    "ref": "github.com/JGrotex/tci-wi-banking-extension/banking/activity/ibanvalidation",
+    "inputs": [
+           {
+            "name": "IBAN",
+            "type": "string",
+            "required": true
+           }
+    ],
+  
+    "outputs": [
+           {
+            "name": "result",
+            "type": "string"
+          }
+    ]
+}
