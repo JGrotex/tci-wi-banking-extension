@@ -8,7 +8,7 @@ TIBCO Cloud Integration Extensions
 available Activities so far
 ### IBAN Validation
 Input
-IBAN (String)
+- IBAN (String)
 
 Output
-result (String) "valid" / "invalid"
+- result (String) "valid" / "invalid"
