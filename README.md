@@ -7,6 +7,12 @@ TIBCO Cloud Integration Extensions
 ## Activities
 available Activities so far
 ### IBAN Validation
+Validation of an IBAN String against IBAN Country specific Patterns and Checksum verification.  
+
+#### Graphical Webintegrator Flow in TCI
+![TCI Webintegrator flow image](screenshots/Banking-IBAN.png?raw=true "TCI WI Banking IBAN validation Screenshot")
+
+#### Interface
 Input
 - IBAN (String)
 
