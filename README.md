@@ -1,7 +1,9 @@
 # TCI WI Banking Extension
 first Version with just IBAN validation, more to come ...
 
-Here you can test the running Service on TIBCO Cloud Integration & Web Integrator using Swagger UI
+Usually you have to pay for those kind of services, with this Extension you can first of all host your own Version, and apply your own addantional Validations as well.
+
+Here you can test the running Service on TIBCO Cloud Integration & Web Integrator and including this Extension using Swagger UI
 http://www.godev.de/GOLib/swaggUI.html
 
 Attached ZIP contains the first release v.1.2 and can just uploaded under 
