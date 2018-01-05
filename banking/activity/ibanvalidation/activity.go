@@ -18,6 +18,7 @@ const (
 
 var activityLog = logger.GetLogger("banking-activity-IBANvalidation")
 
+//IBANvalidationActivity TCI WI Activity
 type IBANvalidationActivity struct {
 	metadata *activity.Metadata
 }
@@ -26,9 +27,13 @@ type IBANvalidationActivity struct {
 func NewActivity(metadata *activity.Metadata) activity.Activity {
 	return &IBANvalidationActivity{metadata: metadata}
 }
+
+//Metadata activity.Metadata
 func (a *IBANvalidationActivity) Metadata() *activity.Metadata {
 	return a.metadata
 }
+
+//Eval execution
 func (a *IBANvalidationActivity) Eval(context activity.Context) (done bool, err error) {
 	activityLog.Info("Executing IBAN validation activity")
 	//Read Inputs
