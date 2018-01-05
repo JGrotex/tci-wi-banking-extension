@@ -137,7 +137,7 @@ func IsCorrectIban(iban string, debug bool) (isValid bool, wellFormated string, 
 func splitIbanUp(iban string) (countryCode string, checksum string, bban string) {
 	countryCode = iban[0:2]
 	checksum = iban[2:4]
-	bban = iban[4:len(iban)]
+	bban = iban[4:]
 	return countryCode, checksum, bban
 }
 
@@ -149,7 +149,7 @@ func splitTo4(value string) (returnValue string) {
 		if n < len(value)-3 {
 			returnValue += value[n:n+4] + " "
 		} else {
-			returnValue += value[n:len(value)]
+			returnValue += value[n:]
 		}
 		n += 4
 	}
@@ -215,7 +215,7 @@ func calculateModulo(iban string) int {
 			}
 
 			rest = (value % 97)
-			iban = strconv.Itoa(rest) + iban[9:len(iban)]
+			iban = strconv.Itoa(rest) + iban[9:]
 		} else {
 			tempIBAN = iban
 

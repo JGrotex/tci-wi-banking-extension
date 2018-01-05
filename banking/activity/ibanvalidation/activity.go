@@ -41,8 +41,8 @@ func (a *IBANvalidationActivity) Eval(context activity.Context) (done bool, err 
 	//activityLog.Info("IBAN: " + IBANstr)
 
 	// execute validation - Start
-	var OK, well_formated, ibanerr = IsCorrectIban(IBANstr, true) // passed: IBAN string , debug true/false
-	activityLog.Info("IBAN well_formated: " + well_formated)
+	var OK, wellFormated, ibanerr = IsCorrectIban(IBANstr, true) // passed: IBAN string , debug true/false
+	activityLog.Info("IBAN wellFormated: " + wellFormated)
 	if ibanerr != nil {
 		activityLog.Info("IBAN format error")
 		//	return false, activity.NewError("IBAN Error "+ibanerr.Error(), "IBAN-4002", nil)
