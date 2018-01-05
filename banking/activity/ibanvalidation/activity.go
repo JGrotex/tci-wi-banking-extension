@@ -1,9 +1,10 @@
+package ibanvalidation
+
 /*
  * Copyright © 2018. TIBCO Software Inc.
  * This file is subject to the license terms contained
  * in the license file that is distributed with this file.
  */
-package ibanvalidation
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
@@ -21,10 +22,10 @@ type IBANvalidationActivity struct {
 	metadata *activity.Metadata
 }
 
+//NewActivity type
 func NewActivity(metadata *activity.Metadata) activity.Activity {
 	return &IBANvalidationActivity{metadata: metadata}
 }
-
 func (a *IBANvalidationActivity) Metadata() *activity.Metadata {
 	return a.metadata
 }
