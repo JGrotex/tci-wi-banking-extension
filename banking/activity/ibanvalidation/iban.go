@@ -68,6 +68,7 @@ func NewIBAN(ibanNumber string) (IBAN, error) {
 	return newIBAN, nil
 }
 
+//getBankCode
 func getBankCode(iban IBAN) (string, error) {
 	for _, code := range countryList {
 		if code.code == iban.CountryCode {
@@ -90,7 +91,7 @@ type ibanCountry struct {
 	standardTreatment bool
 }
 
-// IsCorrectIban checks if the given iban number corresponds to the rules of a valid iban number and also
+//IsCorrectIban checks if the given iban number corresponds to the rules of a valid iban number and also
 // returns a properly formated iban number string.
 func IsCorrectIban(iban string, debug bool) (isValid bool, wellFormated string, err error) {
 	var ibanConfig ibanCountry
@@ -119,7 +120,7 @@ func IsCorrectIban(iban string, debug bool) (isValid bool, wellFormated string, 
 					wellFormated = splitTo4(iban)
 				}
 			} else {
-				return false, wellFormated, fmt.Errorf("IBAN: lenght (%s) does not match configuration length (%s)", strconv.Itoa(passedChars), strconv.Itoa(ibanConfig.chars))
+				return false, wellFormated, fmt.Errorf("IBAN: length (%s) does not match configuration length (%s)", strconv.Itoa(passedChars), strconv.Itoa(ibanConfig.chars))
 			}
 
 		} else {
@@ -127,11 +128,12 @@ func IsCorrectIban(iban string, debug bool) (isValid bool, wellFormated string, 
 		}
 
 	} else {
-		return false, wellFormated, fmt.Errorf("IBAN: incorect IBAN string passed <%s>", iban)
+		return false, wellFormated, fmt.Errorf("IBAN: incorrect IBAN string passed <%s>", iban)
 	}
 	return ibanValid, wellFormated, nil
 }
 
+//splitIbanUp
 func splitIbanUp(iban string) (countryCode string, checksum string, bban string) {
 	countryCode = iban[0:2]
 	checksum = iban[2:4]
@@ -139,6 +141,7 @@ func splitIbanUp(iban string) (countryCode string, checksum string, bban string)
 	return countryCode, checksum, bban
 }
 
+//splitTo4
 func splitTo4(value string) (returnValue string) {
 	n := 0
 	for n < len(value) {
@@ -153,7 +156,7 @@ func splitTo4(value string) (returnValue string) {
 	return returnValue
 }
 
-// GetIbanChecksum returns the checksum of the given iban number.
+//GetIbanChecksum returns the checksum of the given iban number.
 func GetIbanChecksum(iban string) (int, error) {
 	ibanChecksum := 0
 
@@ -170,11 +173,12 @@ func GetIbanChecksum(iban string) (int, error) {
 		ibanChecksum = 98 - calculateModulo(convertedIban)
 
 	} else {
-		return -1, fmt.Errorf("IBAN: incorect IBAN string passed <%s>", iban)
+		return -1, fmt.Errorf("IBAN: incorrect IBAN string passed <%s>", iban)
 	}
 	return ibanChecksum, nil
 }
 
+//convertCharToNumber
 func convertCharToNumber(value string) string {
 	var temp = []byte(value)
 	var result string
@@ -190,10 +194,12 @@ func convertCharToNumber(value string) string {
 	return result
 }
 
+//rearrangeIBAN
 func rearrangeIBAN(countryCode string, checksum string, bban string) string {
 	return bban + countryCode + checksum
 }
 
+//calculateModulo
 func calculateModulo(iban string) int {
 	exit := false
 	tempIBAN := ""
