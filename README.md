@@ -1,4 +1,7 @@
 # TCI WI Banking Extension
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/JGrotex/tci-wi-banking-extension)](https://goreportcard.com/report/github.com/JGrotex/tci-wi-banking-extension) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 first Version with just IBAN validation, more to come ...
 
 Usually you have to pay for those kind of services, with this Extension you can first of all host your own Version, and apply your own addantional Validations as well.
