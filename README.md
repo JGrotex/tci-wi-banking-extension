@@ -9,6 +9,8 @@ Usually you have to pay for those kind of services, with this Extension you can 
 Here you can test the running Service on TIBCO Cloud Integration & Web Integrator and including this Extension using Swagger UI
 http://www.godev.de/GOLib/swaggUI.html
 
+Will add the full TIBCO Cloud Integration App here soon, as the WebUI comes now with a APP Export Functionality.
+
 Attached ZIP contains the first release v.1.2 and can just uploaded under 
 TIBCO Cloud Integration - Extensions
 
